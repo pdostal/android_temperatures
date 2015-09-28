@@ -3,18 +3,95 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/MainActivity">
 
-    <TextView android:text="@string/SHTemperature" android:layout_width="wrap_content"
+    <TextView android:text="@string/SHOutside" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SHTemperature" />
+        android:id="@+id/SHOutside"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:text="@string/DefaultTemperatureValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SHTemperatureValue"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/SHOutsideValue"
+        android:layout_alignParentRight="true" />
+
+    <TextView android:text="@string/SHHousing3" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SHHousing3"
+        android:layout_below="@+id/SHOutside"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:text="@string/DefaultTemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SHHousing3Value"
+        android:layout_below="@+id/SHOutsideValue"
+        android:layout_alignParentRight="true" />
+
+    <TextView android:text="@string/SHHousing4" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SHHousing4"
+        android:layout_below="@+id/SHHousing3"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:text="@string/DefaultTemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SHHousing4Value"
+        android:layout_below="@+id/SHHousing3Value"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:text="@string/OskarOutside"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/OskarOutside"
+        android:layout_below="@+id/SHHousing4"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:text="@string/DefaultTemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/OskarOutsideValue"
+        android:layout_below="@+id/SHHousing4Value"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:text="@string/OskarLagoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/OskarLagoon"
+        android:layout_below="@+id/OskarOutside"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:text="@string/DefaultTemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/OskarLagoonValue"
+        android:layout_below="@+id/OskarOutsideValue"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:text="@string/PdostalRoom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PdostalRoom"
+        android:layout_below="@+id/OskarLagoon"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:text="@string/DefaultTemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PdostalRoomValue"
+        android:layout_below="@+id/OskarLagoonValue"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

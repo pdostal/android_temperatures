@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">temperatures</string>
 
-    <string name="SHTemperature">Silicon Hill - Temperature</string>
+    <string name="SHOutside">Silicon Hill - Outside</string>
+    <string name="SHHousing3">Silicon Hill - Housing 3</string>
+    <string name="SHHousing4">Silicon Hill - Housing 4</string>
+    <string name="OskarOutside">Oskar - Outside</string>
+    <string name="OskarLagoon">Oskar - Lagoon</string>
+    <string name="PdostalRoom">Pavel - Room</string>
     <string name="action_settings">Settings</string>
-    <string name="DefaultTemperatureValue">0 °C</string>
+    <string name="DefaultTemperatureValue"> °C</string>
 </resources>

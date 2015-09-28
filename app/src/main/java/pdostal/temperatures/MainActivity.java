@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,9 +50,36 @@ public class MainActivity extends AppCompatActivity {
                         topic = data.getString("topic").toString();
                         message = data.getString("message").toString();
 
-                        Log.d("timestamp", timestamp );
-                        Log.d("message", message );
-                        Log.d("topic", topic );
+                        if(topic.matches("^/weather/temperature$")){
+                            TextView t = (TextView)findViewById(R.id.SHOutsideValue);
+                            t.setText(message + " °C");
+                        }
+                        if(topic.matches("^/housing3/vpravo_dole$")){
+                            TextView t = (TextView)findViewById(R.id.SHHousing3Value);
+                            t.setText(message + " °C");
+                        }
+                        if(topic.matches("^/housing4/dvere_nahore$")){
+                            TextView t = (TextView)findViewById(R.id.SHHousing4Value);
+                            t.setText(message + " °C");
+                        }
+                        if(topic.matches("^/oskar/jezirko/vzduch/temperature$")){
+                            TextView t = (TextView)findViewById(R.id.OskarOutsideValue);
+                            t.setText(message + " °C");
+                        }
+                        if(topic.matches("^/oskar/jezirko/dno/temperature$")){
+                            TextView t = (TextView)findViewById(R.id.OskarLagoonValue);
+                            t.setText(message + " °C");
+                        }
+                        if(topic.matches("^/pdostalcz/tp-82n/message$")){
+                            message = message.replaceAll("INT:([0-9]+.[0-9]+)C.*", "$1");
+
+                            TextView t = (TextView)findViewById(R.id.PdostalRoomValue);
+                            t.setText(message + " °C");
+                        }
+
+                        Log.d("timestamp", timestamp);
+                        Log.d("message", message);
+                        Log.d("topic", topic);
                     } catch (JSONException e) {
                         return;
                     }
