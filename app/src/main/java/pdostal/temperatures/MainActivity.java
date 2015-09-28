@@ -1,8 +1,10 @@
 package pdostal.temperatures;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -29,9 +31,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //mSocket.on("new message", onNewMessage);
+        mSocket.on("mqtt", handleIncomingMessages);
         mSocket.connect();
     }
+
+    private Emitter.Listener handleIncomingMessages = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            MainActivity.this.runOnUiThread(new Runnable() {
+                @Override
+
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String timestamp,topic,message;
+                    try {
+                        timestamp = data.getString("timestamp").toString();
+                        topic = data.getString("topic").toString();
+                        message = data.getString("message").toString();
+
+                        Log.d("timestamp", timestamp );
+                        Log.d("message", message );
+                        Log.d("topic", topic );
+                    } catch (JSONException e) {
+                        return;
+                    }
+                }
+            });
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
