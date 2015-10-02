@@ -44,37 +44,43 @@ public class MainActivity extends AppCompatActivity {
 
                 public void run() {
                     JSONObject data = (JSONObject) args[0];
-                    String timestamp,topic,message;
+                    String timestamp, topic, message;
+                    double temperature;
                     try {
                         timestamp = data.getString("timestamp").toString();
                         topic = data.getString("topic").toString();
                         message = data.getString("message").toString();
 
                         if(topic.matches("^/weather/temperature$")){
+                            temperature = Math.round(Double.parseDouble(message)*10)/10.0d;
                             TextView t = (TextView)findViewById(R.id.SHOutsideValue);
-                            t.setText(message + " °C");
+                            t.setText(temperature + " °C");
                         }
                         if(topic.matches("^/housing3/vpravo_dole$")){
+                            temperature = Math.round(Double.parseDouble(message)*10)/10.0d;
                             TextView t = (TextView)findViewById(R.id.SHHousing3Value);
-                            t.setText(message + " °C");
+                            t.setText(temperature + " °C");
                         }
                         if(topic.matches("^/housing4/dvere_nahore$")){
+                            temperature = Math.round(Double.parseDouble(message)*10)/10.0d;
                             TextView t = (TextView)findViewById(R.id.SHHousing4Value);
-                            t.setText(message + " °C");
+                            t.setText(temperature + " °C");
                         }
                         if(topic.matches("^/oskar/jezirko/vzduch/temperature$")){
+                            temperature = Math.round(Double.parseDouble(message)*10)/10.0d;
                             TextView t = (TextView)findViewById(R.id.OskarOutsideValue);
-                            t.setText(message + " °C");
+                            t.setText(temperature + " °C");
                         }
                         if(topic.matches("^/oskar/jezirko/dno/temperature$")){
+                            temperature = Math.round(Double.parseDouble(message)*10)/10.0d;
                             TextView t = (TextView)findViewById(R.id.OskarLagoonValue);
-                            t.setText(message + " °C");
+                            t.setText(temperature + " °C");
                         }
                         if(topic.matches("^/pdostalcz/tp-82n/message$")){
                             message = message.replaceAll("INT:([0-9]+.[0-9]+)C.*", "$1");
-
+                            temperature = Math.round(Double.parseDouble(message)*10)/10.0d;
                             TextView t = (TextView)findViewById(R.id.PdostalRoomValue);
-                            t.setText(message + " °C");
+                            t.setText(temperature + " °C");
                         }
 
                         Log.d("timestamp", timestamp);
