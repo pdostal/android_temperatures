@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">temperatures</string>
+    <string name="app_name">Temperatures</string>
 
     <string name="SHOutside">Silicon Hill - Outside</string>
     <string name="SHHousing3">Silicon Hill - Housing 3</string>
